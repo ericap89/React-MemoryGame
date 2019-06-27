@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from 'react-bootstrap/Navbar';
+import './NavBar.css'
 
 
 
@@ -7,9 +7,20 @@ class NavBar extends Component {
     render() {
         return (
             <div>
-               <Navbar bg="dark" variant="light">
-                    <Navbar.Brand  color="white">Click Game</Navbar.Brand>
-                </Navbar>
+               <nav className="nav">
+                    <ul>
+                        <li>
+                            <p>Click Game</p>
+                        </li>
+                        <li>Score:
+
+                        </li>
+                        
+                        <li>High Score:
+
+                        </li>
+                        </ul>
+                </nav>
             </div>
         );
     }
