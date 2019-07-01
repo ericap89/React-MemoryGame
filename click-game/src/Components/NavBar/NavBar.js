@@ -1,29 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NavBar.css'
 
-
-
-class NavBar extends Component {
-    render() {
-        return (
-            <div>
-               <nav className="nav">
-                    <ul>
-                        <li>
-                            <p>Click Game</p>
-                        </li>
-                        <li>Score:
-
-                        </li>
-                        
-                        <li>High Score:
-
-                        </li>
-                        </ul>
-                </nav>
-            </div>
-        );
-    }
-}
+const NavBar = _ => (
+    <nav className="nav">
+      <ul>
+        <li className="brand">
+          Click Game
+        </li>
+        <li>Score:   High Score: </li></ul>
+    </nav>
+  
+  );
+  
 
 export default NavBar;

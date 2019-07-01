@@ -1,0 +1,63 @@
+[
+    {
+      "id": 0,
+      "name": "Hank",
+      "image": "http://powerplantmen.files.wordpress.com/2012/09/hank-hill-king-of-the-hill.jpg",
+      "isClicked": false
+    },
+    {
+      "id": 1,
+      "name": "Boon",
+      "image": "https://carboncostume.com/wordpress/wp-content/uploads/2017/10/Boomhauer.jpg",
+      "isClicked": false
+    },
+    {
+      "id": 2,
+      "name": "Bill",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Bill_Dauterive.png/150px-Bill_Dauterive.png",
+      "isClicked": false
+    },
+    {
+      "id": 3,
+      "name": "Dale",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Dale_Gribble.png/250px-Dale_Gribble.png",
+      "isClicked": false
+    },
+    {
+      "id": 4,
+      "name": "Peggy",
+      "image": "https://i.pinimg.com/236x/60/c4/2a/60c42a27546e6b56cfdc392c118cab5e--fictional-characters-the-hill.jpg",
+      "isClicked": false
+    },
+    
+    {
+      "id": 5,
+      "name": "Bobby",
+      "image": "https://66.media.tumblr.com/e21bfd3ee941b7b3257cd81ef0070f79/tumblr_osqx23oSGx1rjktyso1_1280.png",
+      "isClicked": false
+    },
+    {
+      "id": 6,
+      "name": "logo",
+      "image": "https://vignette.wikia.nocookie.net/soundeffects/images/4/42/KOTH_Logo.jpg/revision/latest?cb=20140530074540",
+      "isClicked": false
+    },
+    {
+      "id": 7,
+      "name": "CharacterGroup",
+      "image": "https://i.kinja-img.com/gawker-media/image/upload/s--F4K1CGrp--/c_scale,f_auto,fl_progressive,q_80,w_800/lyavkqiwqjdkalmxmskc.jpg",
+      "isClicked": false
+    },
+    {
+      "id": 8,
+      "name": "Propane",
+      "image": "https://i.imgur.com/VerwiD4.png",
+      "isClicked": false
+    },
+    {
+      "id": 9,
+      "name": "Peggy&Bobby",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Peggy_Hill.png/150px-Peggy_Hill.png",
+      "isClicked": false
+    }
+  ]
