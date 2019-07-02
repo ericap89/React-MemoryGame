@@ -10,17 +10,94 @@ class App extends Component {
   constructor(){
     super()
 
-    // this.handleShuffleItems = this.handleShuffleItems.bind(this)
+    this.handleShuffleItems = this.handleShuffleItems.bind(this)
   }
 
   state = {
     score: 0,
     highScore: 0,
-    maxScore: 10,
+    highestScore: 10,
     Items: Items
   };
 
+  randomShuffle = (arr) => {
+    let currentIndex = arr.length;
+    let tempValue;
+    let random;
 
+   
+    if (0 !== currentIndex) {
+      random = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      tempValue = arr[currentIndex];
+      arr[currentIndex] = arr[random];
+      arr[random] = tempValue;
+    }
+
+    return arr;
+  }
+
+  handleCorrectAnswer = () => {
+    
+      if (this.state.score+1 > this.state.highScore) {
+        this.setState({highScore: this.state.highScore+1})
+      }
+      if (this.state.score+1 === this.state.highestScore) {
+        this.setState({score: this.state.score+1})
+      }else{
+        this.setState({score: this.state.score+1})
+      }
+    }
+
+
+  handleIncorrectAnswer = () => {
+    //incorrect reset score to 0
+    this.setState({score: 0 })
+    const updatedItems = this.state.Items.map(castIcon => castIcon.isClicked === true ? { ...castIcon, isClicked: false } : castIcon)
+    return updatedItems
+  }
+
+  ///handle reset when game is won 
+  //if highest score is rendered reset scorse to 0 
+  // handleResetVictory()
+  //victory function not resetting 
+  handleResetVictory = (currentCastIcon) => {
+    if (this.state.score-1 === this.state.maxScore) {
+      this.setState({score: 0, topScore: 0})
+      const updatedCastIcon = currentCastIcon.map(castIcon => (true) ? { ...castIcon, isClicked: false } : castIcon)
+      return updatedCastIcon
+    }else{
+      return currentCastIcon
+    }
+  }
+
+  handleShuffleItems = (name) => {
+    var resetGame = false;
+    const Items = this.state.Items.map(castIcon => {
+    
+      if(castIcon.name === name) {
+        if (castIcon.isClicked === false) {
+          this.handleCorrectAnswer()
+          return { ...castIcon, isClicked: true}
+        }else{
+          resetGame = true
+          return { ...castIcon, isClicked: false}
+        }
+      }
+      return castIcon
+    })
+
+    if (resetGame) {
+      this.setState({
+        Items: this.randomShuffle(this.handleIncorrectAnswer())
+      })
+    }else{
+      this.setState({ Items: this.randomShuffle(this.handleResetVictory(Items)) })
+    }
+    
+  }
+
+ 
 
   handleRenderItems = () => {
     return this.state.Items.map((item) =>
@@ -36,7 +113,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar/>
+        <NavBar score={this.state.score}
+          highScore={this.state.highScore}/>
         <Banner />
         <div className="content">
           {this.handleRenderItems()}

@@ -8,8 +8,8 @@ class Banner extends Component {
         return (
             <header className="header">
             <h1>Game Rules!</h1>
-            <h3>Click on an image to earn points...</h3>
-            <h3>But be sure not to click the same image twice!</h3>
+            <h4>Click on an image to earn points...</h4>
+            <h4>But be sure not to click the same image twice!</h4>
             </header>
         );
     }
