@@ -61,15 +61,7 @@ class App extends Component {
   //if highest score is rendered reset scorse to 0 
   // handleResetVictory()
   //victory function not resetting 
-  handleResetVictory = (currentCastIcon) => {
-    if (this.state.score-1 === this.state.maxScore) {
-      this.setState({score: 0, topScore: 0})
-      const updatedCastIcon = currentCastIcon.map(castIcon => (true) ? { ...castIcon, isClicked: false } : castIcon)
-      return updatedCastIcon
-    }else{
-      return currentCastIcon
-    }
-  }
+ 
 
   handleShuffleItems = (name) => {
     var resetGame = false;
