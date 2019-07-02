@@ -19,7 +19,7 @@ class App extends Component {
     highestScore: 10,
     Items: Items
   };
-
+//shuffle items arr
   randomShuffle = (arr) => {
     let currentIndex = arr.length;
     let tempValue;
@@ -37,8 +37,17 @@ class App extends Component {
     return arr;
   }
 
+//Handle answers correct/incorrect
+
+  handleIncorrectAnswer = () => {
+    //incorrect reset score to 0
+    this.setState({score: 0 })
+    const updatedItems = this.state.Items.map(castIcon => castIcon.isClicked === true ? { ...castIcon, isClicked: false } : castIcon)
+    return updatedItems
+  }
+
   handleCorrectAnswer = () => {
-    
+    //increment score for correct answer by 1 
       if (this.state.score+1 > this.state.highScore) {
         this.setState({highScore: this.state.highScore+1})
       }
@@ -50,12 +59,7 @@ class App extends Component {
     }
 
 
-  handleIncorrectAnswer = () => {
-    //incorrect reset score to 0
-    this.setState({score: 0 })
-    const updatedItems = this.state.Items.map(castIcon => castIcon.isClicked === true ? { ...castIcon, isClicked: false } : castIcon)
-    return updatedItems
-  }
+ 
 
   ///handle reset when game is won 
   //if highest score is rendered reset scorse to 0 
@@ -89,7 +93,7 @@ class App extends Component {
     
   }
 
- 
+ ///render character icons 
 
   handleRenderItems = () => {
     return this.state.Items.map((item) =>
